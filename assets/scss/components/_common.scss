@@ -1,0 +1,111 @@
+@use '../abstract/' as *;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    line-height: 1.6;
+    font-family: $font-main;
+    font-size: $fs-body;
+    color: $color-dark;
+}
+
+a {
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+input {
+    outline: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul, li {
+    list-style: none;
+}
+
+ul {
+    padding-left: 0;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+h1 {
+    font-size: $fs-header1;
+}
+
+h2 {
+    font-size: $fs-header2;
+
+    @include sm-xs {
+        font-size: $fs-semilarge;
+        line-height: 1.2;
+    }
+}
+
+h3 {
+    font-size: $fs-main;
+    font-weight: $fw-reg;
+    line-height: 1.5;
+
+    @include sm-xs {
+        font-size: $fs-reg;
+    }
+}
+
+label {
+    font-size: 1rem;
+    font-weight: $fw-reg;
+}
+
+input {
+    border: 1px solid $color-dark;
+    background-color: $color-light;
+    height: 50px;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    opacity: 0.8;
+
+    &[type="checkbox"] {
+        height: 20px;
+        flex-basis: 25%;
+
+        @include sm-xs {
+            margin-right: 10px;
+        }
+    }
+}
+
+textarea {
+    @extend input;
+    height: 100%;
+    padding-top: 10px;
+    font-family: $font-main;
+}
+
+.checkbox__container {
+    display: flex;
+    align-items: center;
+
+    & label {
+        cursor: pointer;
+        margin-bottom: 20px;
+    }
+}

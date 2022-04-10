@@ -1,0 +1,34 @@
+@use '../abstract/skin' as *;
+
+%hamburger {
+    background: $color-nav;
+    width: 2em;
+    height: 3px;
+    transition: transform 250ms ease-in-out;
+    margin: auto;
+}
+
+%container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+%container-small {
+    max-width: 500px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+%gray-section {
+    background-color: $color-sectionbg;
+    padding-bottom: 100px;
+}
+
+%tetris {
+    position: absolute;
+    max-width: 50px;
+    max-height: 50px;
+}

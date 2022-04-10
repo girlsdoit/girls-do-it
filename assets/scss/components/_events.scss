@@ -1,0 +1,135 @@
+@use '../abstract/' as *;
+
+//styles on the index page
+.events {
+    @extend %gray-section;
+
+    @include sm-xs {
+        padding-bottom: 50px
+    }
+
+    &__container {
+        @extend %container;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+
+        & h2 {
+            margin-bottom: 55px;
+            margin-top: 55px;
+
+            @include sm-xs {
+                margin-bottom: 30px;
+                margin-top: 30px;
+            }
+        }
+    }
+
+    &__link {
+        color: $color-accent;
+    }
+
+    &__description {
+        margin-top: 55px;
+        margin-bottom: 1rem;
+        opacity: 0.7;
+
+        @include sm-xs {
+            margin-top: 30px;
+        }
+    }
+
+    &__video {
+        min-width: 56%;
+        min-height: 23.75rem;
+
+        @include lg-md {
+            min-width: 75%;
+        }
+
+        @include md-sm {
+            min-width: 92%;
+            min-height: 22.8rem;
+        }
+
+        @include sm-xs {
+            max-width: 100%;
+            min-height: 6rem;
+        }
+    }
+
+    &__tetris {
+        @extend %tetris;
+        
+        top: 15%;
+        right: 10%;
+
+        @include md-xs {
+            top: 0;
+            right: 0;
+        }
+    }
+}
+
+//styles on the events page
+.ourevents {
+    @extend %container;
+
+    display: flex;
+    flex-direction: column;
+    padding-top: 150px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    @include sm-xs {
+        padding-top: 70px;
+    }
+
+    & h1 {
+        @include sm-xs {
+            font-size: $fs-semilarge;
+        }
+    }
+
+    &-latest {
+        margin-bottom: 50px;
+        width: 75%;
+
+        @include sm-xs {
+            width: 100%;
+        }
+
+        
+        &__video {
+            width: 100%;
+            min-height: 32rem;
+
+            @include sm-xs {
+                min-height: 21rem;
+            }
+        }
+    }
+
+    &-all {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 100px;
+        gap: 30px;
+    }
+
+    &__video {
+        width: 47%;
+        min-height: 21rem;
+
+        @include sm-xs {
+            width: 90%;
+            min-height: 13rem;
+        }
+    }
+}

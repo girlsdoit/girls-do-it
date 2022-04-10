@@ -1,0 +1,95 @@
+@use '../abstract/' as *;
+
+.footer {
+    background-color: $color-dark;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+
+    @include sm-xs {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    &__container{
+        @extend %container;
+    }
+
+    &__box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include md-xs {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    &__text {
+        color: $color-light;
+        font-weight: $fw-medium;
+    }
+}
+
+.social {
+    display: flex;
+    align-items: center;
+
+    @include md-xs {
+        justify-content: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        margin-right: 50px;
+
+        @include sm-xs {
+            margin-right: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+            .social__svg-footer {
+                fill: $color-nav;
+            }
+        }
+    }
+
+    &__link-uparrow {
+        margin-left: 30px;
+
+        &:hover,
+        &:active,
+        &:focus {
+            .social__svg-footer {
+                fill: $color-nav;
+            }
+        }
+
+        @include sm-xs {
+            margin-left: 0;
+        }
+    }
+
+    &__svg {
+        fill: $color-nav;
+        transition: 0.2s;
+
+        &-footer{
+            fill: $color-light;
+            transition: 0.2s;
+        }
+
+        &-uparrow {
+            margin-top: 4px;
+        }
+    }
+}

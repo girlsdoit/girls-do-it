@@ -1,0 +1,57 @@
+@use '../abstract/' as *;
+
+.supportus {
+    @extend %container;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 50px;
+    position: relative;
+
+    &__description, 
+    &__list {
+        max-width: 400px;
+        font-size: $fs-reg;
+        font-weight: $fw-light;
+        line-height: 1.5;
+        opacity: 0.8;
+    }
+
+    &-bonus {
+        max-width: 350px;
+        font-size: $fs-small;
+    }
+
+    & a {
+        min-width: 220px;
+    }
+
+    &__tetris {
+        @extend %tetris;
+
+        @include sm-xs {
+            max-width: 25px;
+        }
+
+        &-1 {
+            top: 10%;
+            right: 8%;
+
+            @include sm-xs {
+                top: 12%;
+            }
+        }
+
+        &-2 {
+            top: 50%;
+            left: 10%;
+
+            @include sm-xs {
+                top: 60%;
+            }
+        }
+    }
+}

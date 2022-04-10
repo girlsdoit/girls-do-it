@@ -1,0 +1,68 @@
+@use '../abstract/' as *;
+
+.aboutus {
+    &__cover {
+        padding-top: 150px;
+        background-image: url(../../assets/img/cover-min.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+
+        & h1 {
+            max-width: 460px;
+            position: absolute;
+            top: 66%;
+            left: 12%;
+            color: $color-light;
+            line-height: 1.23;
+
+            @include sm {
+                font-size: $fs-header2;
+                top: 56%;
+            }
+
+            @include sm-xs {
+                font-size: $fs-header3;
+                top: 75%;
+            }
+        }
+    }
+
+    &__container {
+        @extend %container;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+        margin-top: 30px;
+
+        @include md {
+            display: block;
+        }
+
+        & p {
+            font-size: $fs-semireg;
+        }
+    }
+
+
+
+    &-left,
+    &-right {
+        max-width: 550px;
+        margin: 0 20px; 
+    }
+
+    &-left {
+        & h1 {
+            margin-top: 0;
+            line-height: 1.23;
+
+            @include sm-xs {
+                font-size: $fs-header3;
+            }
+        }
+    }
+}
